@@ -19,8 +19,8 @@ package DeFineStack;
  * @since 1.0.0
  */
 public class MyStack1 {
-    int N;//size
-    String [] str;
+    private   int N;//size
+    private String [] str;
 
     public void capacity(int c){
         str=new String[c];
