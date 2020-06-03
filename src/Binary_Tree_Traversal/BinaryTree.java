@@ -105,6 +105,27 @@ public  class BinaryTree {
 
 
 
+//非递归前序遍历
+    public void BianryTreeleft(Node node){
+        Node pnode=node;
+        Stack<Node> stack=new Stack<Node>();
+        while(pnode!=null||!stack.isEmpty()){
+            {
+                while(pnode!=null){
+                    System.out.println(node.val);
+                    stack.push(pnode);
+                    pnode=pnode.left;
+                }
+                if(pnode==null&&!stack.isEmpty()){
+                    Node nn=stack.pop();
+                    pnode=nn.right;
+                }
+            }
+        }
+
+
+
+    }
 
 
 
