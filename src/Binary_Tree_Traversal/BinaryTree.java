@@ -10,6 +10,10 @@
  */
 package Binary_Tree_Traversal;
 
+
+import java.util.LinkedList;
+import java.util.Stack;
+
 /**
  * 〈一句话功能简述〉<br> 
  * 〈二叉树的前序遍历〉
@@ -62,6 +66,43 @@ public  class BinaryTree {
     }
 
     //--------------------------------------二叉树的非递归实现-------------------------------------------------
+
+
+    //非递归中序遍历
+
+    public void inOrderTraverse2(Node root) {
+        LinkedList<Node> stack = new LinkedList<>();
+        Node pNode = root;
+        while (pNode != null || !stack.isEmpty()) {
+            if (pNode != null) {
+                stack.push(pNode);
+                pNode = pNode.left;
+            } else { //pNode == null && !stack.isEmpty()
+                Node node = stack.pop();
+                System.out.print(node.val+"  ");
+                pNode = node.right;
+            }
+        }
+    }
+
+
+   //改进中序遍历代码
+    public void  inOrderTraverse3(Node node){
+        Stack<Node> stack=new Stack<Node>();
+        Node myNode=node;
+        while(myNode!=null||!stack.isEmpty()){
+            while(node!=null){
+                stack.push(myNode);
+                myNode=myNode.left;
+            }
+            if(myNode==null&&!stack.isEmpty()){
+                Node p=stack.pop();
+                System.out.println(p.val);
+                myNode=p.right;
+            }
+        }
+    }
+
 
 
 
